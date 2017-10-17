@@ -1,0 +1,26 @@
+.row
+  .col-xs-8.col-xs-offset-2
+    %h2= t('create_category')
+- if @category.errors.any?
+  .row
+    .col-xs-8.col-xs-offset-2.errors
+      %h2
+        = pluralize(@category.errors.count, "error")
+        = t('errors', count: @category.errors.count)
+      %ul
+        - @category.errors.full_messages.each do |msg|
+          %li= msg
+.row
+  .col-xs-8.col-xs-offset-2.well
+    /TODO : VÉRIFIER SI ON EST ADMIN
+    - if user_signed_in?
+      = form_for @category, class: 'form', html: {multipart: true} do |f|
+        .form-group
+          = f.label :name, class: 'form-label required'
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.submit t('create_category'), class: 'btn btn-primary center-block'
+    - else
+      %div.alert.alert-danger.text-center{role: 'alert', style: 'margin-bottom: 0!important;'}
+        %a.alert-link{ href: new_user_session_path}
+          = t('errors.need_login')

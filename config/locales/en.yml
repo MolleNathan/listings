@@ -24,11 +24,13 @@ en:
   search_placeholder: "What are you searching for?"
   search: "Search"
   create_listing: "Create my listing"
+  create_category: "Create my category"
   contact: "Contact seller"
   required_field: "* Required field"
   errors:
     one: "erreur"
     other: "erreurs"
+    need_login: "You must be logged !"
   your_email: "Your E-mail address"
   your_message: "Your message"
   send: "Send"

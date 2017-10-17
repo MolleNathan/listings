@@ -24,11 +24,13 @@ fr:
   search_placeholder: "Que recherchez vous ?"
   search: "Rechercher"
   create_listing: "Créer mon annonce"
+  create_category: "Créer ma catégorie"
   contact: "Contacter le vendeur"
   required_field: "* Champ requis"
   errors:
     one: "error"
     other: "errors"
+    need_login: "Vous devez être connecté !"
   your_email: "Votre adresse E-mail"
   your_message: "Votre message"
   send: "Envoyer"

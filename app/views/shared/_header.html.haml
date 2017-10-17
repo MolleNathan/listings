@@ -20,7 +20,7 @@
               %option{value: url_for(locale: loc.to_s), selected: I18n.locale == loc}
                 = loc.upcase
 
-          %a{href: (user_signed_in? ? '#' : new_user_session_path)}
+          %a{href: (user_signed_in? ? new_listing_path : new_user_session_path)}
             %button.btn.btn-success
               = t('create_listing')
       .clearfix
