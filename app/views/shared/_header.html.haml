@@ -6,10 +6,6 @@
           %a{:href => root_path} Listings
       .col-xs-10
         %div.pull-right
-          %select.language{data: {do: 'setLocale'}}
-            - I18n.available_locales.each do |loc|
-              %option{value: url_for(locale: loc.to_s), selected: I18n.locale == loc}
-                = loc.upcase
           - if user_signed_in?
             %a.logout{href: destroy_user_session_path, data: {method: 'delete'}}
               = t('logout')
@@ -18,4 +14,13 @@
           - else
             %a.my-account{href: new_user_session_path}
               = t('sign_in')
+
+          %select.language{data: {do: 'setLocale'}}
+            - I18n.available_locales.each do |loc|
+              %option{value: url_for(locale: loc.to_s), selected: I18n.locale == loc}
+                = loc.upcase
+
+          %a{href: (user_signed_in? ? '#' : new_user_session_path)}
+            %button.btn.btn-success
+              = t('create_listing')
       .clearfix
