@@ -3,10 +3,10 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.search(params)
 
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render :xml => @listings.to_xml }
-    # end
+     respond_to do |format|
+       format.html
+       format.json { render :xml => @listings.to_xml }
+     end
   end
 
   def new
