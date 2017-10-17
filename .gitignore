@@ -20,6 +20,7 @@ vendor/bundle/
 .ruby-version
 *.sublime-*
 *.sql
+*.sqlite3
 public/uploads/
 .ruby-gemset
 dump.rdb
