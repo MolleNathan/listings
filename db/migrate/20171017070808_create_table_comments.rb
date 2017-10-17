@@ -4,8 +4,8 @@ class CreateTableComments < ActiveRecord::Migration[5.1]
       t.text "content"
       t.integer "user_id"
       t.integer "listing_id"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+
+      t.timestamps
     end
   end
 end

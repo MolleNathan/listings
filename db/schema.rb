@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20171017073741) do
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -27,22 +27,22 @@ ActiveRecord::Schema.define(version: 20171017073741) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "listing_id"
     t.integer "user_id"
     t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "listings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "title"
     t.text "description"
     t.string "picture"
     t.decimal "price"
     t.integer "category_id"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pages", force: :cascade do |t|
