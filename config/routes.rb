@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     root 'homepage#index'
 
     post '/listings/contact', to: 'listings#contact', as: 'listing_contact'
-    resources :listings
+    resources :listings, :categories
     #apipie
   end
 

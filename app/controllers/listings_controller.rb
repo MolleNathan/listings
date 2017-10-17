@@ -1,12 +1,12 @@
 class ListingsController < ApplicationController
 
   def index
-    @listings = Listing.search(params)
+    @listings = Listing.all
 
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render :xml => @listings.to_xml }
-    # end
+    respond_to do |format|
+      format.html
+      format.json { render :json => @listings.to_json }
+    end
   end
 
   def new
@@ -17,6 +17,17 @@ class ListingsController < ApplicationController
   end
 
   def create
+    @listing = Listing.new(listing_params)
+
+    respond_to do |format|
+      if @listing.save
+        format.html { redirect_to @listing, notice: 'Category was successfully created.' }
+        format.json { render :show, status: :created, location: @listing }
+      else
+        format.html { render :new }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def contact
@@ -29,5 +40,14 @@ class ListingsController < ApplicationController
 
 private
   def listing_params
+    params
+      .require(:listing)
+      .permit(
+        :title,
+        :description,
+        :picture,
+        :price,
+        :category_id)
+      .merge(user_id: current_user.id)
   end
 end

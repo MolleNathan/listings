@@ -12,10 +12,26 @@
           %li= msg
 .row
   .col-xs-8.col-xs-offset-2.well
-    = form_for @listing, class: 'form', html: {multipart: true} do |f|
-      .form-group
-        = f.label :title, class: 'form-label required'
-        = f.text_field :title, class: 'form-control'
-      .form-group
-        = f.label :category_id, class: 'form-label required'
-        = f.collection_select :category_id, Category.all, :id, :name, {}, {class: 'form-control'}
+    - if user_signed_in?
+      = form_for @listing, class: 'form', html: {multipart: true} do |f|
+        .form-group
+          = f.label :title, class: 'form-label required'
+          = f.text_field :title, class: 'form-control'
+        .form-group
+          = f.label :description, class: 'form-label required'
+          = f.text_field :description, class: 'form-control'
+        .form-group
+          = f.label :price, class: 'form-label required'
+          = f.number_field :price, class: 'form-control'
+        .form-group
+          = f.label :picture, class: 'form-label required'
+          = f.file_field :picture, class: 'form-control'
+        .form-group
+          = f.label :category_id, class: 'form-label required'
+          = f.collection_select :category_id, Category.all, :id, :name, {}, {class: 'form-control'}
+        .form-group
+          = f.submit t('create_listing'), class: 'btn btn-primary center-block'
+    - else
+      %div.alert.alert-danger.text-center{role: 'alert', style: 'margin-bottom: 0!important;'}
+        %a.alert-link{ href: new_user_session_path}
+          = t('errors.need_login')
