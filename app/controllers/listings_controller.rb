@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show]
 
   def index
-    @listings = Listing.all
+    @listings = Listing.search(params)
 
     respond_to do |format|
       format.html

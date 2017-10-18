@@ -4,4 +4,8 @@ class Listing < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :comments
+
+  def self.search(args)
+    Listing.where("title LIKE :query", query:"%#{args[:keywords]}%")
+  end
 end
