@@ -54,6 +54,7 @@ fr:
   save: "Enregistrer"
   choose_category: "Sélectionnez une catégorie"
   my_account: "Mon compte"
+  administration: "Administration"
   logout: "Déconnexion"
   sign_in: "Login"
   sign_up: "Créer un compte"

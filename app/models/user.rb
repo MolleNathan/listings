@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
   has_many :listings
+  belongs_to :role
+
+  def isAdmin?
+    self.role.id == 1
+  end
 end

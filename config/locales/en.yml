@@ -54,6 +54,7 @@ en:
   save: "Save"
   choose_category: "Choose a category"
   my_account: "My account"
+  administration: "Administration"
   logout: "Logout"
   sign_in: "Login"
   sign_up: "Sign up"

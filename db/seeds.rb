@@ -18,3 +18,17 @@
 #   password: 'azerty',
 #   password_confirmation: 'azerty'
 # )
+
+Role.create(
+  id: 0,
+  name: 'User'
+)
+
+Role.create(
+  id: 1,
+  name: 'Admin'
+)
+
+Category.create(
+  name: 'Informatique'
+)

@@ -16,6 +16,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json { render :json => @category.to_json }
+    end
   end
 
   def create

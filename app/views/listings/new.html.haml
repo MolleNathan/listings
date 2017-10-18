@@ -22,7 +22,7 @@
           = f.text_field :description, class: 'form-control'
         .form-group
           = f.label :price, class: 'form-label required'
-          = f.number_field :price, class: 'form-control'
+          = f.number_field :price, class: 'form-control', step: 0.01
         .form-group
           = f.label :picture, class: 'form-label required'
           = f.file_field :picture, class: 'form-control'
