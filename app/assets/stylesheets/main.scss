@@ -75,6 +75,14 @@ form.busy {
       content: '× ';
     }
   }
+  a.administration {
+    color: #fff;
+    line-height: 40px;
+    margin-right: 20px;
+    &:before {
+      content: '» ';
+    }
+  }
   h1 {
     font-size: 40px;
     padding: 0;

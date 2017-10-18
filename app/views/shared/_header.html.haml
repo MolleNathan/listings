@@ -12,7 +12,7 @@
             %a.my-account{href: '#'}
               = t('my_account')
             - if current_user.is_admin?
-              %a.logout{href: rails_admin_path}
+              %a.administration{href: rails_admin_path}
                 = t('administration')
           - else
             %a.my-account{href: new_user_session_path}
