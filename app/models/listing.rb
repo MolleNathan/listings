@@ -6,6 +6,6 @@ class Listing < ApplicationRecord
   has_many :comments
 
   def self.search(args)
-    Listing.where("title LIKE :query", query:"%#{args[:keywords]}%")
+    Listing.where("title LIKE :query OR description LIKE :query", query:"%#{args[:keywords]}%")
   end
 end
