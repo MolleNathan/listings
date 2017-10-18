@@ -7,7 +7,12 @@ class User < ApplicationRecord
   has_many :listings
   belongs_to :role
 
-  def isAdmin?
-    self.role.id == 1
+  def is_admin?
+    self.role.name == "Admin"
   end
+
+  def is_user?
+    self.role.name == "User"
+  end
+
 end
