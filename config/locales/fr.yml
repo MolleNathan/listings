@@ -64,12 +64,7 @@ fr:
   unlock_instruction: "Vous n'avez pas reçu les instructions pour débloquer votre compte?"
   resend_unlock_instruction: "Renvoyer les instructions pour débloquer le compte"
   sign_with: "Connecté en temps que "
-  email: "Adresse mail"
   edit: "Editer "
-  remember_me: "Se souvenir de moi"
-  password: "Mot de passe"
-  password_conf: "Confirmer le mot de passe"
-  current_password: "Mot de passe actuel"
   change_password: "Changer de mot de passe"
   password_change: "(Laissez vide si vous ne voulez pas le changer)"
   conf_current_password: "(Rentrez votre mot de passe actuel pour confirmer vos changements)"
@@ -101,6 +96,11 @@ fr:
         first_name: "Prénom"
         last_name: "Nom"
         password_confirmation: "Confirmation du mot de passe"
+        password: "Mot de passe"
+        email: "Adresse mail"
+        remember_me: "Se souvenir de moi"
+        password_confirmation: "Confirmer le mot de passe"
+        current_password: "Mot de passe actuel"
     errors:
       models:
         listing:

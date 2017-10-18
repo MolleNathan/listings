@@ -64,12 +64,7 @@ en:
   unlock_instruction: "Didn't receive unlock instructions?"
   resend_unlock_instruction: "Resend unlock instruction"
   sign_with: "Sign in with"
-  email: "Email"
   edit: "Edit"
-  remember_me: "Remember me"
-  password: "Password"
-  password_con: "Password confirmation"
-  current_password: "Current password"
   change_password: "Change current password"
   password_change: "(leave blank if you don't want to change it)"
   conf_current_password: "(we need your current password to confirm your changes)"
@@ -101,6 +96,11 @@ en:
         first_name: "First name"
         last_name: "Last name"
         password_confirmation: "Password confirmation"
+        password: "Password"
+        email: "Email"
+        remember_me: "Remember me"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
     errors:
       models:
         listing:
