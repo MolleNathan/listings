@@ -21,12 +21,12 @@
 
 Role.create(
   id: 1,
-  name: 'User'
+  name: 'user'
 )
 
 Role.create(
   id: 2,
-  name: 'Admin'
+  name: 'admin'
 )
 
 Category.create(

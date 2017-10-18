@@ -8,11 +8,11 @@ class User < ApplicationRecord
   belongs_to :role
 
   def is_admin?
-    self.role.name == "Admin"
+    self.role.name == "admin"
   end
 
   def is_user?
-    self.role.name == "User"
+    self.role.name == "user"
   end
 
 end
