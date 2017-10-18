@@ -97,6 +97,10 @@ en:
         picture: "Choose a picture"
         price: "Price"
         category_id: "Catégory"
+      user:
+        first_name: "First name"
+        last_name: "Last name"
+        password_confirmation: "Password confirmation"
     errors:
       models:
         listing:

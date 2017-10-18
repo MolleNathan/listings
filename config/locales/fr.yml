@@ -97,6 +97,10 @@ fr:
         picture: "Choisissez une image"
         price: "Prix"
         category_id: "Catégorie"
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"
+        password_confirmation: "Confirmation du mot de passe"
     errors:
       models:
         listing:
