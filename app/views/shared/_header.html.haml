@@ -1,0 +1,33 @@
+.container
+  .row
+    .top
+      .col-xs-2
+        .h1.title
+          %a{href: root_path}= "Listings"
+      .col-xs-10.pull-right
+        - if current_user
+          %a{href: destroy_user_session_path, class: 'my-account pull-left', 'data-method' => 'delete'}
+            = t('logout')
+          %a{href: new_listing_path ,class:'btn btn-success pull-right'}
+            = t('create_listing')
+        - else
+          %a{href: new_user_registration_path ,class:'btn pull-left'}
+            = t('sign_up')
+          %a{href: new_user_session_path, class: 'my-account pull-left'}
+            = t('sign_in')
+          -# %button.alert
+          -#   = button_to("Go", action: "notif", controller: "homepage")
+            -# %a{href: account_contact_path, class: 'my-account pull-right'}
+                -#   = t('my_account')
+        -# - else
+        -#       %a{href: new_user_session_path, class: 'my-account pull-right'}
+        -#         = t('sign_in')
+        -#
+        -#     - if current_user
+        -#       %a{href: destroy_user_session_path, class: 'my-account pull-right', 'data-method' => 'delete'}
+        -#         = t('logout')
+        %select{class: 'form-control pull-right language' , 'data-do' =>'setLocale'}
+          - I18n.available_locales.each do |loc|
+            %option{value: url_for(locale: loc.to_s), selected: I18n.locale == loc}
+              = loc.upcase
+      .clearfix

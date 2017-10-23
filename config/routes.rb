@@ -2,6 +2,17 @@ Rails.application.routes.draw do
 mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   localized do
 
+      resources :users
+      resources :pages, only: [:show]
+
+      namespace :account do
+        resources :user, only: [:index, :update]
+        resources :contacts, only: [:index]
+        resources :messages, only: [:index]
+      end
+
+      #namespace :api, format, 
+
       devise_for :users
       #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
