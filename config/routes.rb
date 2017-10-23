@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     post '/listings/contact', to: 'listings#contact', as: 'listing_contact'
     resources :listings, :categories
+    resources :pages, only: [:show, :index]
     #apipie
   end
 
