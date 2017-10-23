@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20171018120333) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role_id", default: 0, null: false
+    t.integer "role_id", default: 1, null: false
     t.string "first_name", default: "Anonymous", null: false
     t.string "last_name", default: "Anonymous", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
