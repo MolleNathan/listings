@@ -1,0 +1,9 @@
+one:
+    language: 'fr'
+    name: 'titre français'
+    content: 'content FR'
+
+two:
+  language: 'en'
+  name: 'titre anglais'
+  content: 'content EN'

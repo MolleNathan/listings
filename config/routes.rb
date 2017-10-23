@@ -6,11 +6,18 @@ Rails.application.routes.draw do
     root 'homepage#index'
     resources :listings
     resources :users
+    resources :pages, only: [:show]
 
     devise_for :users
     post '/listings/contact', to: 'listings#contact', as: 'listing_contact'
     post 'homepage/notif'
-  
+
+    # namespace :account do
+    #   resources :user, only: [:index, :update]
+    #   resources :contacts, only: [:index]
+    #   resources :messages, only: [:index]
+    # end
+
 
   #apipie
   end

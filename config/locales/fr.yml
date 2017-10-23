@@ -41,6 +41,9 @@ fr:
   image: "Image"
   price: "Prix"
   date: "Date"
+  footer:
+    about: "A propos"
+    legal_notice: "CGU"
   account:
     navs:
       my_contacts: "Mes contacts"
