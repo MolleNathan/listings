@@ -15,7 +15,7 @@
           = listing.description
         %p.price
           = "#{listing.price}€"
-      %button.btn.btn-primary.pull-right{data: {do: "showContactModal" }}
+      %button.btn.btn-primary.pull-right{data: {do: "showContactModal", user: "#{current_user.try(:id)}" }}
         = t('contact')
 
 = render partial: "modals/contact"
