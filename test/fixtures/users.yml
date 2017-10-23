@@ -1,0 +1,9 @@
+seller:
+  email: 'seller@domain.com'
+  role: user_role
+
+# admin:
+#   first_name: 'admin'
+#   last_name: 'admin last name'
+#   email: 'admin@domain.com'
+#   is_admin: true

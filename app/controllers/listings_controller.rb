@@ -1,13 +1,8 @@
 class ListingsController < ApplicationController
 
   def index
-  #  @listings = Listing.search(params)
-    @listings = Listing.all
-
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render :xml => @listings.to_xml }
-    # end
+    @listings = Listing.search(params)
+#    @listings = Listing.all
   end
 
   def new

@@ -1,4 +1,26 @@
 - @listings.each do |listing|
-  = listing.title
-  = listing.category.name
-  %br
+  .row
+    .col-xs-12.listing
+      %h3= listing.title
+      %p.date
+        = l(listing.created_at)
+        %a.category{:href => "#{listings_path(category_id: listing.category_id)}"}
+
+          - begin
+            %span.badge= listing.category.name
+          - rescue
+            = "cette categorie a été supprimée"
+      .row
+        .col-xs-2
+          %a{href: listing_path(listing)}
+            = image_tag listing.picture, width: 300, class: 'img-responsive'
+        .col-xs-10
+          %p
+            = listing.description
+          .clearfix
+            %br/
+
+
+          %span.price=number_to_currency(listing.price, unit: '€')
+/          = link_to t('contact'), new_user_session_path, class: 'btn btn-primary pull-right', data: {do:
+  = render partial: '/modals/contact'
