@@ -11,4 +11,8 @@ class Listing < ApplicationRecord
   def thumbnail
     picture.url ? picture : DEFAULT_THUMBNAIL
   end
+  
+  def self.search(args)
+    Listing.where("title LIKE :query OR description LIKE :query", query:"%#{args[:keywords]}%")
+  end
 end
