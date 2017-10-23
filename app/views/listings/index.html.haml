@@ -7,14 +7,15 @@
         = listing.created_at
         %span.category.label.label-info
           = listing.category.name
-
       .col-sm-4.col-md-2
         .thumbnail
-          %img{src: (listing.picture != nil ? listing.picture : 'http://media.istockphoto.com/photos/pig-picture-id120534386?k=6&m=120534386&s=612x612&w=0&h=nsy1ZpqPri6EfAaAOYgjLjpT5GjHGkgtEq0YTRiG6UU=')}
+          %img{src: listing.thumbnail}
       .col-sm-8.col-md-10
         %p
           = listing.description
         %p.price
           = "#{listing.price}€"
-      %button.btn.btn-primary.pull-right
+      %button.btn.btn-primary.pull-right{data: {do: "showContactModal" }}
         = t('contact')
+
+= render partial: "modals/contact"
