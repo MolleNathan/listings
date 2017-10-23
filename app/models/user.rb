@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
   has_many :listings
+  has_many :messages
+  has_many :conversations
   belongs_to :role
 
   def is_admin?

@@ -37,7 +37,13 @@ class ListingsController < ApplicationController
   end
 
   def contact
-    Contact.generate(
+    # Contact.generate(
+    #   user_id: current_user.id,
+    #   listing_id: params[:listing_id],
+    #   message: params[:message]
+    # )
+
+    Conversation.generate(
       user_id: current_user.id,
       listing_id: params[:listing_id],
       message: params[:message]

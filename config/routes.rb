@@ -12,6 +12,13 @@ Rails.application.routes.draw do
     resources :listings, :categories
     resources :pages, only: [:show, :index]
     #apipie
+
+    namespace :account do
+      resources :user, only: [:index, :create]
+    #   resources :contacts, only: [:index]
+    #   resources :messages, only: [:index]
+    end
+
   end
 
 end
