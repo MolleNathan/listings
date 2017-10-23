@@ -1,0 +1,17 @@
+.container
+  -@listings.each do |listing|
+    .row.listing
+      %h3
+        = listing.title
+      %p.date
+        = listing.created_at
+        %span.category.label.label-info
+          = listing.category.name
+      .col-sm-4.col-md-2
+        .thumbnail
+          = image_tag listing.picture
+      .col-sm-8.col-md-10
+        %span.price.label
+          = listing.price
+        %span.description.label
+          = listing.description
