@@ -10,6 +10,8 @@
             = t('logout')
           %a{href: new_listing_path ,class:'btn btn-success pull-right'}
             = t('create_listing')
+          %a{href: account_users_path, class: 'btn btn-success pull-right'}
+            = t('my_account')
         - else
           %a{href: new_user_registration_path ,class:'btn pull-left'}
             = t('sign_up')

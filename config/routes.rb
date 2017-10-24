@@ -12,11 +12,11 @@ Rails.application.routes.draw do
     post '/listings/contact', to: 'listings#contact', as: 'listing_contact'
     post 'homepage/notif'
 
-    # namespace :account do
-    #   resources :user, only: [:index, :update]
-    #   resources :contacts, only: [:index]
-    #   resources :messages, only: [:index]
-    # end
+    namespace :account do
+      resources :users, only: [:index, :create,:update]
+      #resources :contacts, only: [:index]
+      #resources :messages, only: [:index]
+    end
 
 
   #apipie

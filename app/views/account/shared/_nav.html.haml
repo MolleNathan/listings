@@ -1,0 +1,39 @@
+%ul.nav.nav-tabs
+  %li
+    %a{:href => "#"}
+      = t('account.navs.my_contacts')
+  %li
+    %a{:href => "#"}
+      = t('account.navs.my_messages')
+  %li.active
+    %a{:href => "#"}
+      = t('account.navs.my_profile')
+    //Formulaire
+    .row
+      = form_for [:account, @user], url: account_users_path, class: 'form',method: :post do |u|
+        .form-group
+          .col-xs-12.col-xs-offset-2.well
+            = u.label t('your_email'), class: 'form-label'
+            = u.text_field :email, placeholder: @user.email, class: 'form-control'
+        .form-group
+          .col-xs-12.col-xs-offset-2.well
+            = u.label t('first_name'), class: 'form-label'
+            = u.text_field :first_name ,placeholder: @user.first_name, class: 'form-control'
+        .form-group
+          .col-xs-12.col-xs-offset-2.well
+            = u.label t('last_name'), class: 'form-label'
+            = u.text_field :last_name ,placeholder: @user.last_name, class: 'form-control'
+        .form-group
+          = u.submit t('save'), class: 'btn btn-primary pull-right'
+    .row
+      = form_for [:account, @user], url: account_users_path, class: 'form', method: :post do |u|
+        .form-group
+          .col-xs-12.col-xs-offset-2.well
+            = u.label t('password') , class: 'form-label'
+            = u.text_field :password, class: 'form-control'
+        .form-group
+          .col-xs-12.col-xs-offset-2.well
+            = u.label t('password_confirmation'), class: 'form-label'
+            = u.text_field :password_confirmation, class: 'form-control'
+        .form-group
+          = u.submit t('save'), class: 'btn btn-primary pull-right'

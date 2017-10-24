@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  password : "Mot de passe"
+  password_confirmation : "Confirmation de votre mote de passe"
+  first_name : "Prénom"
+  last_name : "Nom de famille"
   main_baseline: "Vous allez trouver"
   search_placeholder: "Que recherchez vous ?"
   search: "Rechercher"
