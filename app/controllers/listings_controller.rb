@@ -43,11 +43,22 @@ class ListingsController < ApplicationController
     #   message: params[:message]
     # )
 
-    Conversation.generate(
-      user_id: current_user.id,
-      listing_id: params[:listing_id],
+    # Conversation.generate(
+    #   user_id: current_user.id,
+    #   listing_id: params[:listing_id],
+    #   message: params[:message]
+    # )
+    message = Messenger.new(
+      listing_id: params[:listing_id].to_i,
+      user: current_user,
       message: params[:message]
-    )
+    ).call
+
+    if message.errors.any?
+      render json: {success: false, errors: message.errors}.to_json, status: 422
+    else
+      render json: {success: true}.to_json
+    end
   end
 
 private
